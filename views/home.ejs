@@ -1,0 +1,148 @@
+<%- include("partials/header"); -%>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>COVID-19 Utility</title>
+
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+
+  <link rel="stylesheet" href="/css/all.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Lato&family=Montserrat:wght@800&family=Ubuntu&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <section id="title">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="main-heading">Be sure than sorry.</h>
+        </div>
+
+        <div class="col-lg-6">
+          <img class="title-image" src="/images/mask.png" alt="mask.png">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Features -->
+  <section id="features">
+    <div class="row">
+      <div class="feature-box col-lg-4">
+        <img class="features-icon" src="/images/clock.png" alt="">
+        <h3 class="features-heading">COVID-19 Detection.</h3>
+        <p class="features-p">COVID-19 detection within no time.</p>
+      </div>
+      <div class="feature-box col-lg-4">
+        <img class="features-icon" src="/images/plasma.png" alt="">
+        <h3 class="features-heading">Plasma Donation.</h3>
+        <p class="features-p">We have made it easier for you and your loved ones.</p>
+      </div>
+      <div class="feature-box col-lg-4">
+        <img class="features-icon" src="/images/doctor.png" alt="">
+        <h3 class="features-heading">Consult Doctors.</h3>
+        <p class="features-p">Consult doctors online without leaving the comfort of your house.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- COVID-19 Numbers Interface -->
+
+  <section id="numbers">
+    <h1 class="numbers-mainHeading">Daily Numbers</h1>
+    <h1 class="numbers-heading">Pakistan</h1>
+    <h3></h3>
+    <div class="row">
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Confirmed Cases:</h3>
+        <h3 class="numbers-stats"><%= pakistanCases %></h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Deaths:</h3>
+        <h3 class="numbers-stats"><%= pakistanDeaths %> </h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Recovered:</h3>
+        <h3 class="numbers-stats"><%=pakistanRecovered%></h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Active:</h3>
+        <h3 class="numbers-stats"><%= pakistanActive %></h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Today Cases:</h3>
+        <h3 class="numbers-stats"><%=pakistanTodayCases%></h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Today Deaths:</h3>
+        <h3 class="numbers-stats"><%= pakistanTodayDeaths %></h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Today Recovered:</h3>
+        <h3 class="numbers-stats"><%=pakistanTodayRecovered%></h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Critical:</h3>
+        <h3 class="numbers-stats"><%= pakistanCritical %></h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="numbers">  
+    <h1 class="numbers-heading">WorldWide</h1>
+    <div class="row">
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Confirmed Cases:</h3>
+        <h3 class="numbers-stats"><%= worldWideCases %></h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Deaths:</h3>
+        <h3 class="numbers-stats"><%= worldWideDeaths %> </h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Recovered:</h3>
+        <h3 class="numbers-stats"><%=worldWideRecovered%></h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Active:</h3>
+        <h3 class="numbers-stats"><%= worldWideActive %></h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Today Cases:</h3>
+        <h3 class="numbers-stats"><%=worldWideTodayCases%></h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Today Deaths:</h3>
+        <h3 class="numbers-stats"><%= worldWideTodayDeaths %></h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Today Recovered:</h3>
+        <h3 class="numbers-stats"><%=worldWideTodayRecovered%></h3>
+      </div>
+      <div class="col-lg-3 numbers-div">
+        <h3 class="numbers">Critical:</h3>
+        <h3 class="numbers-stats"><%= worldWideCritical %></h3>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>
+
+<%- include("partials/footer"); -%>

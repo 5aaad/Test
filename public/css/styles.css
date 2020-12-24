@@ -1,0 +1,190 @@
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 12px;
+  margin: 0;
+  background: #f05454;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.container-fluid {
+  padding: 0% 5%;   !important
+}
+
+.navbar-brand {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: white;
+}
+
+.navbarButtons {
+
+  width: 115px;
+  background: white;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.nav-item {
+  padding: 0px;
+  color: white; !important 
+  position: relative;
+  margin-left: 30px;
+  font-weight: bolder;
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 5px;
+}
+
+#logo {
+  width: 60px;
+  margin-top: -1px;
+  position: relative;
+}
+
+.main-heading {
+  font-size: 70px;
+  width: 70%;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  position: relative;
+  margin-top: 80px;
+  transition: font-size 2s;
+}
+
+.main-heading:hover {
+  font-size: 80px;
+}
+
+.features-heading {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.features-p {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+}
+
+
+.navbar-inner {
+  background-color: transparent;
+}
+
+#title {
+  background-color: #F05454;
+  position: relative;
+  margin-bottom: 20px;
+   !important
+}
+
+.title-image {
+  width: 100%;
+  height: 100%;
+  transition: width 2s, height 2s;
+}
+
+.title-image:hover{
+  width: 110%;
+  height: 110%;
+}
+
+#features {
+  padding: 100px;
+  text-align: center;
+}
+
+.features-icon {
+  width: 100px;
+  height: 100px;
+  transition: width 2s, height 2s;
+}
+
+.features-icon:hover{
+  width: 120px;
+  height: 120px;
+}
+
+#numbers {
+  padding: 50px;
+  background-color: #white;
+  margin-bottom: 100px;
+}
+
+.numbers-mainHeading{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background-color: #F05454;
+  padding: 50px 100px;
+  text-shadow: 4px 4px #000000;
+  font-size: 50px;
+  margin: 0;
+}
+
+.numbers-heading {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  position: relative;
+  margin-top: 80px;
+  text-shadow: 1px 1px #000000;
+  font-size: 50px;
+}
+
+.numbers {
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+}
+
+.numbers-hr {
+  background-color: white;
+  border-style: none;
+  border-top-style: dotted;
+  border-color: #F05454;
+  border-width: 5px;
+  width: 50%;
+}
+
+.numbers-div {
+  background-color: #f05454;
+  border-radius: 10px;
+  border: 3px solid black;
+  
+  margin: 0px; 
+  transition: width 2s, height 2s;
+  
+}
+
+.numbers-div:hover{
+  width: 300px;
+  height: 150px;
+  font-size: 50px;
+}
+
+.numbers-stats{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 45px;
+  text-align: right;
+  padding-bottom: 20px;
+}
+
+.update-heading{
+  font-family: 'Ubuntu', sans-serif;  
+  text-align: center;
+}
+
+#footer {
+  background-color: #F05454;
+  padding: 1% 1%;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.social-icon {
+  color: white;
+  margin: 20px 10px;
+}
+
+#footer-para {
+  color: white;
+}
