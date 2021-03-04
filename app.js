@@ -244,95 +244,120 @@ app.use('/api/v1/stores', require('./routes/stores'));
 
 //POST Routes
 
-app.post("/api/register", async (req, res) => {
+// app.post("/api/register", async (req, res) => {
+//
+//   const {
+//     email,
+//     password: plainTextPassword
+//   } = req.body;
+//
+//   if (!email || typeof email !== "string") {
+//     return res.json({
+//       status: "error",
+//       error: "Invalid email"
+//     })
+//   }
+//
+//   if (!plainTextPassword || typeof plainTextPassword !== "string") {
+//     return res.json({
+//       status: "error",
+//       error: "Invalid password"
+//     })
+//   }
+//
+//   if (plainTextPassword.length < 5) {
+//     return res.json({
+//       status: "error",
+//       error: "Password too small. It should be atleast 6 characters."
+//     })
+//   }
+//
+//   const password = await bcrypt.hash(plainTextPassword, 10);
+//
+//   try {
+//     const response = await User.create({
+//       email,
+//       password
+//     })
+//     console.log("User created successfully: ", response);
+//   } catch (error) {
+//     if (error.code === 11000) {
+//       return res.json({
+//         status: 'error',
+//         error: "Email already in use."
+//       })
+//     }
+//     throw error;
+//   }
+//
+//   res.json({
+//     status: 'ok'
+//   });
+// });
 
-  const {
-    email,
-    password: plainTextPassword
-  } = req.body;
+app.post("/signup", function(req, res){
+    const userEmail = req.body.email;
+    const userPassword = req.body.password;
 
-  if (!email || typeof email !== "string") {
-    return res.json({
-      status: "error",
-      error: "Invalid email"
+
+    User.findOne({email: userEmail}, function(err, foundList){
+      if(!err){
+        if(!foundList){
+          console.log("User is not registered");
+          const newUser = newUser({
+            email: userEmail,
+            password: userPassword
+          });
+
+          newUser.save();
+          res.render("signin");
+        } else {
+          alreadyRegisteredError = true;
+          console.log("User is registered");
+          res.render("signup");
+        }
+      }
     })
-  }
-
-  if (!plainTextPassword || typeof plainTextPassword !== "string") {
-    return res.json({
-      status: "error",
-      error: "Invalid password"
-    })
-  }
-
-  if (plainTextPassword.length < 5) {
-    return res.json({
-      status: "error",
-      error: "Password too small. It should be atleast 6 characters."
-    })
-  }
-
-  const password = await bcrypt.hash(plainTextPassword, 10);
-
-  try {
-    const response = await User.create({
-      email,
-      password
-    })
-    console.log("User created successfully: ", response);
-  } catch (error) {
-    if (error.code === 11000) {
-      return res.json({
-        status: 'error',
-        error: "Email already in use."
-      })
-    }
-    throw error;
-  }
-
-  res.json({
-    status: 'ok'
-  });
 });
-
-app.post("/api/login", async (req, res) => {
-
-  const {
-    email,
-    password
-  } = req.body;
-
-  const user = await User.findOne({
-    email,
-  }).lean()
-
-  if (!user) {
-    return res.json({
-      status: "error",
-      error: "Invalid username/password!"
-    });
-  }
-
-  if (await bcrypt.compare(password, user.password)) {
-
-    // The username/password is matched
-
-    const token = jwt.sign({
-      id: user._id,
-      email: user.email
-    }, JWT_SECRET);
-
-    return res.json({
-      status: "ok",
-      data: token
-    });
-  }
-
-  res.json({
-    status: "error",
-    data: "Invalid username/password!"
-  })
-})
+//
+// app.post("/api/login", async (req, res) => {
+//
+//   const {
+//     email,
+//     password
+//   } = req.body;
+//
+//   const user = await User.findOne({
+//     email,
+//   }).lean()
+//
+//   if (!user) {
+//     return res.json({
+//       status: "error",
+//       error: "Invalid username/password!"
+//     });
+//   }
+//
+//   if (await bcrypt.compare(password, user.password)) {
+//
+//     // The username/password is matched
+//
+//     const token = jwt.sign({
+//       id: user._id,
+//       email: user.email
+//     }, JWT_SECRET);
+//
+//     return res.json({
+//       status: "ok",
+//       data: token
+//     });
+//   }
+//
+//   res.json({
+//     status: "error",
+//     data: "Invalid username/password!"
+//   })
+// })
 
 const PORT = process.env.PORT || 3000;
 
